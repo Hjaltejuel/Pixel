@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Pixel.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" HorizontalAlignment="Center" >
+            Pixel art transformer
+        </TextBlock>
+        <Grid
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+            Margin="0,0,0,20"
+            >
+
+            <StackPanel  VerticalAlignment="Center">
+                <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100px">
+                Upload image
+            </TextBlock>
+            <Button  Click="Upload_File" HorizontalAlignment="Center">
+                Click here to select file
+            </Button>
+         
+            </StackPanel>
+
+            <!--
+                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.
+            -->
+        </Grid>
+    </Grid>
+</Page>

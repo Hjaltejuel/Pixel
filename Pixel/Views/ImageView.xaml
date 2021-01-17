@@ -1,0 +1,36 @@
+﻿<Page x:Class="Pixel.Views.ImageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid Padding="20"> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Slider Margin="0,0,0,10" Grid.Row="0" Name="slider" Header="Technique Ratio" ValueChanged="slider_ValueChanged"></Slider>
+        <Grid Grid.Row="1" Margin="0,0,0,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ComboBox SelectedItem="Pixelated average" HorizontalAlignment="Center" x:Name="colorComboBox" Width="200"
+              Header="Technique" PlaceholderText="Pick a Editing technique"
+              SelectionChanged="colorComboBox_SelectionChanged">
+                <x:String>Pixelated average</x:String>
+                <x:String>Pixelated median</x:String>
+                <x:String>Blur</x:String>
+            </ComboBox>
+            <Button Grid.Column="1" Click="StartDownload_Click" HorizontalAlignment="Center">Download Image</Button>
+        </Grid>
+
+        <Image Grid.Row="2" x:Name="imageControl"/>
+     
+    </Grid>
+</Page>
+
